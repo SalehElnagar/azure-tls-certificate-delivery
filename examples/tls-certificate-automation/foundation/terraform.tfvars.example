@@ -1,0 +1,14 @@
+subscription_id     = "00000000-0000-0000-0000-000000000000"
+name                = "tls-demo-unique"
+location            = "canadacentral"
+zone_name           = "tls-lab.example.com"
+owner               = "platform-team"
+expires_at          = "2026-10-20T18:00:00Z"
+operator_cidr       = "192.0.2.10/32"
+operator_object_ids = ["00000000-0000-0000-0000-000000000001"]
+entra_client_id     = "00000000-0000-0000-0000-000000000002"
+acme_contact        = "platform@example.com"
+
+# Select an exact image version with an approved regional read; use your public key.
+verifier_image_version = "24.04.202610160" # Listed in Canada Central on 2026-10-19; recheck before a live plan.
+verifier_ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADA5" # Test fixture only; replace before a live plan.

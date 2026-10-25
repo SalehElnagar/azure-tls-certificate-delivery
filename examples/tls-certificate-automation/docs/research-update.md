@@ -1,0 +1,11 @@
+# Current primary-source reconciliation — 2026-10-20
+
+- [Microsoft Application Gateway/Key Vault integration](https://learn.microsoft.com/en-us/azure/application-gateway/key-vault-certs) currently describes versionless secret identifiers, four-hour polling, configuration/tag-triggered certificate checks and a trusted-services bypass. With private endpoints, network steps 1–3 are skipped; step 4 remains. Live initial failure/recovery and explicit tag-refresh observations support the configured path. This supersedes the earlier withheld tag-refresh claim; passive polling remains untested.
+- [Key Vault networking](https://learn.microsoft.com/en-us/azure/key-vault/general/network-security) explains limited trusted-service exceptions even with public network disabled. The lab preserves that setting, defaultDeny and RBAC; it does not claim private-endpoint-only gateway traffic.
+- [Let's Encrypt staging](https://letsencrypt.org/docs/staging-environment/) supplies the test roots. Four official roots were downloaded and parsed into an explicit lab CA file; the ordinary trust store was unchanged and rejected the staging chain.
+- [Pinned RenewCertificate source](https://github.com/polymind-inc/acmebot/blob/2d42897e2511192906ee5c3060b0c2b2768b5e65/src/Acmebot.App/Functions/Http/RenewCertificate.cs) requires the Issue role and schedules manual replacement. A successful manual request does not establish the timer/ARI path.
+- [App Service ZIP deployment](https://learn.microsoft.com/en-us/azure/app-service/deploy-zip) and [Azure CLI 2.87.0 source](https://github.com/Azure/azure-cli/blob/azure-cli-2.87.0/src/azure-cli/azure/cli/command_modules/appservice/custom.py) ground the Entra-only publish contracts. The live strict helper rejected an unexpected Location and reconciled status without re-uploading.
+- [AzureRM 4.81.0 Flex source](https://github.com/hashicorp/terraform-provider-azurerm/blob/v4.81.0/internal/services/appservice/function_app_flex_consumption_resource.go) and retained runtime/readback/plan evidence explain the reserved host-setting problem. Empty override enabled this issuer, but clean Terraform convergence remains unresolved.
+
+Historical research/spec plans are design history scoped to their recorded date.
+The current claim ledger governs editorial wording when earlier observations differ.
